@@ -1,0 +1,55 @@
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mysql = require("mysql2");
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+// Create MySQL connection
+const db = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "lu21n39a",
+  database: "buscapro"
+});
+
+db.connect((err) => {
+  if (err) throw err;
+  console.log("MySQL connected...");
+});
+
+// Login endpoint
+app.post("/api/login", (req, res) => {
+  const { username, password } = req.body;
+  const query = "SELECT * FROM users WHERE username = ? AND password = ?";
+  db.query(query, [username, password], (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    if (results.length > 0) {
+      res.status(200).json({ success: true });
+    } else {
+      res.status(401).json({ success: false, message: "Invalid credentials" });
+    }
+  });
+});
+
+// Register endpoint
+app.post("/api/register", (req, res) => {
+  const { username, password, email } = req.body;
+  const query = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
+  db.query(query, [username, password, email], (err, result) => {
+    if (err) {
+      if (err.code === "ER_DUP_ENTRY") {
+        return res.status(400).json({ success: false, message: "Username already taken" });
+      }
+      return res.status(500).json({ error: err.message });
+    }
+    res.status(201).json({ success: true });
+  });
+});
+
+const PORT = 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});

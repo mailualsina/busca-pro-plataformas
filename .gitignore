@@ -1,0 +1,16 @@
+# Node modules
+node_modules/
+buscapro/node_modules/
+server/node_modules/
+
+# Environment files
+*.env
+buscapro/.env
+server/.env
+
+# Logs
+*.log
+
+# Build folders
+buscapro/build
+server/build
