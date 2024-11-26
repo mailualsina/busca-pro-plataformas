@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "../styles/formulario.css";
 import logo from "../assets/logo.jpg";
 
 function Formulario({ setView }) {
@@ -25,19 +24,19 @@ function Formulario({ setView }) {
 
     return (
 
-        <div class="container">
-            <div class="container-2">
-                <img class="logo" src={logo} alt="Logo"/>
+        <div className="container">
+            <div className="container-2">
+                <img className="logo" src={logo} alt="Logo"/>
             </div>
 
 
-            <div class="container-1">
-                <form onSubmit={handleSubmit} class="form">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre:</label>
+            <div className="container-1">
+                <form onSubmit={handleSubmit} className="form">
+                    <div className="mb-3">
+                        <label for="nombre" className="form-label">Nombre:</label>
                         <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id=""
                             aria-describedby=""
                             placeholder="Nombre"
@@ -46,43 +45,43 @@ function Formulario({ setView }) {
                         />
 
                     </div>
-                    <div class="mb-3">
-                        <label for="apellido" class="form-label">Apellido:</label>
+                    <div className="mb-3">
+                        <label for="apellido" className="form-label">Apellido:</label>
                         <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id=""
                             placeholder="Apellido"
                             value={apellido}
                             onChange={(e) => setApellido(e.target.value)}
                         />
                     </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email:</label>
+                    <div className="mb-3">
+                        <label for="email" className="form-label">Email:</label>
                         <input
                             type="email"
-                            class="form-control"
+                            className="form-control"
                             id=""
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
-                    <div class="mb-3">
-                        <label for="apellido" class="form-label">Teléfono:</label>
+                    <div className="mb-3">
+                        <label for="apellido" className="form-label">Teléfono:</label>
                         <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id=""
                             placeholder="Telefono"
                             value={telefono}
                             onChange={(e) => setTelefono(e.target.value)}
                         />
                     </div>
-                    <button type="submit" class="btn btn-primary"> Ingresar </button>
+                    <button type="submit" className="btn btn-primary"> Ingresar </button>
 
-                    <div class="mb-3">
-                        <button onClick={() => setView("register")}class="btn btn-primary"> Registrarse </button>
+                    <div className="mb-3">
+                        <button onClick={() => setView("register")}className="btn btn-primary"> Registrarse </button>
                     </div>
 
                 </form>

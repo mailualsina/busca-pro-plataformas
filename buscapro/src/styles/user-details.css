@@ -1,0 +1,9 @@
+.details-card{
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    background-color: #d0d4d5;
+    width: 50rem;
+    height: 100%;
+}

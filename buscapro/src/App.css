@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+:root {
+  --one-color: #d0d4d5; 
+  --secundary-color: #066d9f;
+  --four-color: #0D3F6A;
+  --five-color: #0D2237;
+}
+
+body {
+  background: linear-gradient(to right, var(--four-color)
+  , var(--five-color));
+  height: 100vh;
+  margin: 0;
+}
