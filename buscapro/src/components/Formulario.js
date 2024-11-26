@@ -38,7 +38,7 @@ function Formulario({ setView }) {
                         <input
                             type="text"
                             class="form-control"
-                            id=""
+                            id="nombre"
                             aria-describedby=""
                             placeholder="Nombre"
                             value={nombre}
@@ -51,7 +51,7 @@ function Formulario({ setView }) {
                         <input
                             type="text"
                             class="form-control"
-                            id=""
+                            id="apellido"
                             placeholder="Apellido"
                             value={apellido}
                             onChange={(e) => setApellido(e.target.value)}
@@ -62,18 +62,18 @@ function Formulario({ setView }) {
                         <input
                             type="email"
                             class="form-control"
-                            id=""
+                            id="email"
                             placeholder="Email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div class="mb-3">
-                        <label for="apellido" class="form-label">Teléfono:</label>
+                        <label for="telefono" class="form-label">Teléfono:</label>
                         <input
                             type="text"
                             class="form-control"
-                            id=""
+                            id="telefono"
                             placeholder="Telefono"
                             value={telefono}
                             onChange={(e) => setTelefono(e.target.value)}

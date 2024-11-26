@@ -36,7 +36,7 @@ function Login({ setView }) {
                         <input
                             type="text"
                             class="form-control"
-                            id=""
+                            id="usuario"
                             aria-describedby=""
                             placeholder="Usuario"
                             value={username}
@@ -49,7 +49,7 @@ function Login({ setView }) {
                         <input
                             type="password"
                             class="form-control"
-                            id=""
+                            id="password"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
