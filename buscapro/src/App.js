@@ -5,9 +5,11 @@ import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import MiPerfil from "./components/MiPerfil";
 
+import ListaSolicitudes from "./components/ListaSolicitudes";
+
 
 function App() {
-  const [view, setView] = useState("login");
+  const [view, setView] = useState("listasolicitudes");
 
   return (
     <div>
@@ -19,7 +21,10 @@ function App() {
           <Navbar />
         </div>
       )}
-      {view === "miperfil" && <MiPerfil setView={setView} />}
+     {view === "miPerfil" && <MiPerfil setView={setView} />} 
+      {view === "listasolicitudes" && <ListaSolicitudes setView={setView} />}
+
+
     </div>
   );
 }
