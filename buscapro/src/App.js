@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Login from "./components/Login";
 import Formulario from "./components/Formulario";
-import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import UserList from "./components/UserList";
 import MiPerfil from "./components/MiPerfil";
@@ -40,7 +39,6 @@ function App() {
     <div>
       {view === "login" && <Login setView={setView}/>}
       {view === "formulario" && <Formulario setView={setView} />}
-      {view === "register" && <Register setView={setView} />}
       {view === "home" && (
         <div style={{  height: "100vh" }}>
           <Navbar />
