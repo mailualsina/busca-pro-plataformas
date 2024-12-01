@@ -23,7 +23,7 @@ db.connect((err) => {
 // Login endpoint
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
-  const query = "SELECT * FROM users WHERE username = ? AND password = ?";
+  const query = "SELECT * FROM user WHERE username = ? AND password = ?";
   db.query(query, [username, password], (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
     if (results.length > 0) {

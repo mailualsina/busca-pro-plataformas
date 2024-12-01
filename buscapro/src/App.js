@@ -39,20 +39,30 @@ function App() {
   ];
 
   return (
-    <BrowserRouter> 
-    <Menu />
-      <div>
-        <Routes> 
-          <Route path="/" element={<Login />} />
-          <Route path="/formulario" element={<Formulario />} />
-          <Route path="/register" element={<Formulario />} />
-          <Route path="/miPerfil" element={<MiPerfil />} />
-          <Route path="/listasolicitudes" element={<ListaSolicitudes />} />
-          <Route path="/listausuarios" element={<UserList users ={users} />} />
-          <Route path="*" element={<Error404 />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div>
+      {view === "login" && <Login setView={setView}/>}
+      {view === "formulario" && <Formulario setView={setView} />}
+      {view === "home" && (
+        <div style={{  height: "100vh" }}>
+          <BrowserRouter> 
+          <Menu />
+            <div>
+              <Routes> 
+                <Route path="/" element={<Login />} />
+                <Route path="/formulario" element={<Formulario />} />
+                <Route path="/register" element={<Formulario />} />
+                <Route path="/miPerfil" element={<MiPerfil />} />
+                <Route path="/listasolicitudes" element={<ListaSolicitudes />} />
+                <Route path="/listausuarios" element={<UserList users ={users} />} />
+                <Route path="*" element={<Error404 />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
+          <UserList users ={users}/>
+        </div>
+      )}
+      {view === "miperfil" && <MiPerfil setView={setView} />}
+    </div>
   );
 }
 
