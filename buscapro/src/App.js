@@ -4,6 +4,7 @@ import Formulario from "./components/Formulario";
 import Register from "./components/Register";
 import Navbar from "./components/Navbar";
 import UserList from "./components/UserList";
+import MiPerfil from "./components/MiPerfil";
 
 function App() {
   const [view, setView] = useState("login");
@@ -37,8 +38,8 @@ function App() {
 
   return (
     <div>
-      {view === "login" && <Login setView={setView} />}
-      {view === "formulario" && <Formulario setView={setView} />}
+      {view === "login" && <Login setView={setView}/>}
+      {view === "fomulario" && <Formulario setView={setView} />}
       {view === "register" && <Register setView={setView} />}
       {view === "home" && (
         <div style={{  height: "100vh" }}>
@@ -46,6 +47,7 @@ function App() {
           <UserList users ={users}/>
         </div>
       )}
+      {view === "miperfil" && <MiPerfil setView={setView} />}
     </div>
   );
 }

@@ -14,3 +14,4 @@ server/.env
 # Build folders
 buscapro/build
 server/build
+.idea/
