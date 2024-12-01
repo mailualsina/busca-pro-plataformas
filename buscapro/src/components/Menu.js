@@ -13,9 +13,6 @@ export default function Menu() {
                 <a className="nav-link active" aria-current="page" href="/">Login</a>
                 </li>
                 <li  className="nav-item">
-                <a className="nav-link" href="/formulario">Formulario</a>
-                </li>
-                <li  className="nav-item">
                 <a className="nav-link" href="/register">Registro</a>
                 </li>
                 <li  className="nav-item">
@@ -23,6 +20,9 @@ export default function Menu() {
                 </li>
                 <li  className="nav-item">
                 <a className="nav-link" href="/listaSolicitudes">Solicitudes</a>
+                </li>
+                <li  className="nav-item">
+                <a className="nav-link" href="/listausuarios">Profesionales</a>
                 </li>
             </ul>
             </div>

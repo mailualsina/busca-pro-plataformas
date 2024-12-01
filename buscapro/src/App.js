@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Login from "./components/Login";
 import Formulario from "./components/Formulario";
-import Navbar from "./components/Navbar";
 import UserList from "./components/UserList";
 import MiPerfil from "./components/MiPerfil";
 import ListaSolicitudes from "./components/ListaSolicitudes";
@@ -43,12 +42,10 @@ function App() {
     <BrowserRouter> 
     <Menu />
       <div>
-        {view === "home" && <Navbar />}
-        
         <Routes> 
           <Route path="/" element={<Login />} />
           <Route path="/formulario" element={<Formulario />} />
-          <Route path="/register" element={<Register />} />
+          <Route path="/register" element={<Formulario />} />
           <Route path="/miPerfil" element={<MiPerfil />} />
           <Route path="/listasolicitudes" element={<ListaSolicitudes />} />
           <Route path="/listausuarios" element={<UserList users ={users} />} />
