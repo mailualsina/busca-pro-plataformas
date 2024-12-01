@@ -4,6 +4,10 @@ import Formulario from "./components/Formulario";
 import Navbar from "./components/Navbar";
 import UserList from "./components/UserList";
 import MiPerfil from "./components/MiPerfil";
+import ListaSolicitudes from "./components/ListaSolicitudes";
+import { BrowserRouter, Routes, Route } from "react-router-dom"; 
+import Error404 from "./components/Error404";
+import Menu from "./components/Menu";
 
 function App() {
   const [view, setView] = useState("login");
@@ -36,17 +40,22 @@ function App() {
   ];
 
   return (
-    <div>
-      {view === "login" && <Login setView={setView}/>}
-      {view === "formulario" && <Formulario setView={setView} />}
-      {view === "home" && (
-        <div style={{  height: "100vh" }}>
-          <Navbar />
-          <UserList users ={users}/>
-        </div>
-      )}
-      {view === "miperfil" && <MiPerfil setView={setView} />}
-    </div>
+    <BrowserRouter> 
+    <Menu />
+      <div>
+        {view === "home" && <Navbar />}
+        
+        <Routes> 
+          <Route path="/" element={<Login />} />
+          <Route path="/formulario" element={<Formulario />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/miPerfil" element={<MiPerfil />} />
+          <Route path="/listasolicitudes" element={<ListaSolicitudes />} />
+          <Route path="/listausuarios" element={<UserList users ={users} />} />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

@@ -67,6 +67,7 @@ function MiPerfil({ setView }) {
               {editMode ? "Guardar cambios" : "Editar perfil"}
             </button>
             <button onClick={() => setView("home")}>Volver al inicio</button>
+            
           </div>
         </div>
       </div>
