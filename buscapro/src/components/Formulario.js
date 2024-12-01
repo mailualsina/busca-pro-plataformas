@@ -51,8 +51,6 @@ function Formulario({ setView }) {
                             type="text"
                             className="form-control"
                             id="apellido"
-                            class="form-control"
-                            id="apellido"
                             placeholder="Apellido"
                             value={apellido}
                             onChange={(e) => setApellido(e.target.value)}
