@@ -36,12 +36,12 @@ app.post("/api/login", (req, res) => {
 
 // Register endpoint
 app.post("/api/register", (req, res) => {
-  const { username, password, email } = req.body;
-  const query = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
-  db.query(query, [username, password, email], (err, result) => {
+  const { username, password, fullname, lastname, email, phone, professionalValue } = req.body;
+  const query = "INSERT INTO user (username, password, name, last_name, email, contact_number, professional) VALUES (?,?,?,?,?,?,?)";
+  db.query(query, [username, password, fullname, lastname, email, phone, professionalValue], (err, result) => {
     if (err) {
       if (err.code === "ER_DUP_ENTRY") {
-        return res.status(400).json({ success: false, message: "Username already taken" });
+        return res.status(400).json({ success: false, message: "El nombre de usuario ya esta en uso" });
       }
       return res.status(500).json({ error: err.message });
     }
