@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../styles/vistaSolicitudes.css"; 
 import MiPerfil from "./MiPerfil"; 
 
-function VistaSolicitudes() {
+
+function ListaSolicitudes({ setView }) {
   const [solicitudes, setSolicitudes] = useState([
     { id: 1, titulo: "Solicitud 1", monto: "$1.000.000" },
     { id: 2, titulo: "Solicitud 2", monto: "$1.400.000" },
@@ -13,10 +14,9 @@ function VistaSolicitudes() {
   ]);
 
   const [imagenes, setImagenes] = useState([]);
-  const [perfilSeleccionado, setPerfilSeleccionado] = useState(null); // Maneja la solicitud seleccionada
+  const [perfilSeleccionado, setPerfilSeleccionado] = useState(null);
 
   useEffect(() => {
-    // Obtener imágenes aleatorias de usuarios
     fetch("https://randomuser.me/api/?results=6")
       .then((response) => response.json())
       .then((data) => {
@@ -26,12 +26,11 @@ function VistaSolicitudes() {
   }, []);
 
   const handleClickSolicitud = (solicitud) => {
-    setPerfilSeleccionado(solicitud); // Asigna la solic seleccionada
+    setPerfilSeleccionado(solicitud);
   };
 
   return (
     <div className="vista-solicitudes">
-      {/* Columna izquierda: Lista de solicitudes */}
       <div className="columna izquierda">
         <h2 className="titulo-lista">Lista de Solicitudes</h2>
         <div className="contenedor-solicitudes">
@@ -39,11 +38,11 @@ function VistaSolicitudes() {
             <div
               key={solicitud.id}
               className="tarjeta-solicitud"
-              onClick={() => handleClickSolicitud(solicitud)} // Manejar clic en una solicitud
+              onClick={() => handleClickSolicitud(solicitud)}
             >
               <div className="contenido-solicitud">
                 <img
-                  src={imagenes[index]} // Imagen de usuario
+                  src={imagenes[index]}
                   alt="Imagen de persona"
                   className="imagen-solicitud"
                 />
@@ -56,11 +55,9 @@ function VistaSolicitudes() {
           ))}
         </div>
       </div>
-
-      {/* Columna derecha: Mi Perfil */}
       <div className="columna derecha">
         {perfilSeleccionado ? (
-          <MiPerfil solicitud={perfilSeleccionado} />
+          <MiPerfil solicitud={perfilSeleccionado} setView={setView} />
         ) : (
           <p className="mensaje-seleccion">
             Selecciona una solicitud para ver el perfil.
@@ -71,4 +68,4 @@ function VistaSolicitudes() {
   );
 }
 
-export default VistaSolicitudes;
+export default ListaSolicitudes;
