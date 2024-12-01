@@ -11,14 +11,14 @@ function Formulario({ setView }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post("http://localhost:5000/api/formulario", { nombre, apellido, email, telefono});
+            const response = await axios.post("http://localhost:5000/api/register", { nombre, apellido, email, telefono});
             if (response.data.success) {
                 setView("home");
             } else {
                 alert("Invalid credentials");
             }
         } catch (error) {
-            alert("Error logging in");
+            alert("Error registering in, ", error);
         }
     };
 
@@ -78,10 +78,10 @@ function Formulario({ setView }) {
                             onChange={(e) => setTelefono(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary"> Ingresar </button>
+                    <button type="submit" className="btn btn-primary"> Registrarse </button>
 
                     <div className="mb-3">
-                        <button onClick={() => setView("register")}className="btn btn-primary"> Registrarse </button>
+                        <button onClick={() => setView("login")}className="btn btn-primary"> Atras </button>
                     </div>
 
                 </form>

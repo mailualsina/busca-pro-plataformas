@@ -39,7 +39,7 @@ function App() {
   return (
     <div>
       {view === "login" && <Login setView={setView}/>}
-      {view === "fomulario" && <Formulario setView={setView} />}
+      {view === "formulario" && <Formulario setView={setView} />}
       {view === "register" && <Register setView={setView} />}
       {view === "home" && (
         <div style={{  height: "100vh" }}>

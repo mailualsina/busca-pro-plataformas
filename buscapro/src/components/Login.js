@@ -59,7 +59,7 @@ function Login({ setView }) {
 
                     <div className="mb-3">
                         <p id="redirect_crearCuenta">No tiene cuenta? </p>
-                        <button onClick={() => setView("register")}className="btn btn-primary"> Registrarse </button>
+                        <button onClick={() => setView("formulario")}className="btn btn-primary"> Registrarse </button>
                     </div>
 
                 </form>
