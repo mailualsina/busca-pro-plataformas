@@ -53,8 +53,8 @@ function App() {
         <BrowserRouter>
           {!isLoggedIn ? (
             <>
-              {view === "login" && <Login setView={setView} onLogin={handleLogin} />}
-              {view === "formulario" && <Formulario setView={setView} />}
+              {view === "login" && <Login key="login" setView={setView} onLogin={handleLogin} />}
+              {view === "formulario" && <Formulario key="formulario" setView={setView} />}
             </>
           ) : (
             <div style={{ height: "100vh" }}>

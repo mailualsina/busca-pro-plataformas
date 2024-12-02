@@ -22,12 +22,12 @@ function Formulario({ setView }) {
             }
             const response = await axios.post("http://localhost:5000/api/register", { username, password, fullname, lastname, email, phone, professionalValue});
             if (response.data.success) {
-                setView("home");
+                setView("login");
             } else {
-                alert("Invalid credentials");
+                alert("Verifique los campos");
             }
         } catch (error) {
-            alert("Error registering:"+error);
+            alert("Error en el registro:"+error);
         }
     };
 
