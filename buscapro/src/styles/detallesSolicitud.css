@@ -1,0 +1,46 @@
+.detalles-solicitud {
+    background: #f0f0f0;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 700px; /* card size */
+
+  }
+  
+  .boton-cerrar {
+    background: red;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .acciones {
+    display: flex;
+    justify-content: space-between; /* space the elements */
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .boton-enviar {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .boton-enviar:hover {
+    background: #0056b3;
+  }
+  
+  .puntaje {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+  }
+  

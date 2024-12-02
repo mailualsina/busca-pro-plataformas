@@ -11,9 +11,10 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "lu21n39a",
+  password: "Davinci2023.",
   database: "buscapro"
 });
+
 
 db.connect((err) => {
   if (err) throw err;
