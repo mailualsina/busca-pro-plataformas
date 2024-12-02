@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/login.css";
 import logo from "../assets/logo.jpg";
 
-function Login({ setView }) {
+function Login({ setView , onLogin}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -12,12 +12,12 @@ function Login({ setView }) {
         try {
             const response = await axios.post("http://localhost:5000/api/login", { username, password });
             if (response.data.success) {
-                setView("home");
+                onLogin();
             } else {
-                alert("Invalid credentials");
+                alert("Credenciales Invalidas");
             }
         } catch (error) {
-            alert("Error logging in");
+            alert("Error al ingresar");
         }
     };
 
