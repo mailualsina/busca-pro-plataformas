@@ -39,10 +39,10 @@ function UserList({ users }) {
                 <p>{user.briefDescription}</p>
                 <div className="button-container">
                   <button
-                    className="button"
+                    className="button-see-more"
                     onClick={() => handleUserClick(user)}
                   >
-                    View Details
+                    Ver mas
                   </button>
                 </div>
               </div>
