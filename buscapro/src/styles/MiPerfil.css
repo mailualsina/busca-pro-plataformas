@@ -17,13 +17,13 @@
   }
   
   .mi-perfil-contenido {
-    display: flex; /* Flexbox para dos columnas */
-    justify-content: space-between; /* Separación entre columnas */
-    gap: 20px; /* Espaciado entre columnas */
+    display: flex; 
+    justify-content: space-between; 
+    gap: 20px; 
   }
   
   .informacion-personal {
-    flex: 2; /* p. columna izq*/
+    flex: 2; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,12 +70,12 @@
     font-size: 14px;
   }
   
-  /* columna: puntaje y botones */
+
   .puntaje-y-botones {
-    flex: 1; /* columna derec ocupa menos espacio */
+    flex: 1; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Alinea contenido al inicio */
+    align-items: flex-start; 
   }
   
   .puntaje {
@@ -86,8 +86,8 @@
   
   .botones {
     display: flex;
-    flex-direction: column; /* Los botones se apilan verticalmente */
-    width: 100%; /* para q ocupen el ancho completo */
+    flex-direction: column;
+    width: 100%; 
   }
   
   .botones button {

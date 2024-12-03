@@ -3,11 +3,11 @@
     margin-top: 65px;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 700px; /* card size */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 2);
+    max-width: 700px;
     font-family: 'Arial', sans-serif;
   }
-/* Animación de rotación */
+
 .rotate-vert-center {
   -webkit-animation: rotate-vert-center 0.5s;
   animation: rotate-vert-center 0.5s;
@@ -45,7 +45,7 @@
   
   .acciones {
     display: flex;
-    justify-content: space-between; /* space the elements */
+    justify-content: space-between; 
     align-items: center;
     margin-top: 20px;
   }

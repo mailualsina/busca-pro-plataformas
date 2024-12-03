@@ -22,15 +22,15 @@ button , input {
     height: 400px;
     width: 350px;
     margin-bottom: 2rem;
-    margin-left: 40%; /*mov del logo */
+    margin-left: 40%;
 }
 
 
 .logo {
     width: 200px; 
     height: 200px; 
-    border-radius: 50%; /* ára que contenedor sea redondeado */
-    overflow: hidden; /* Recorta contenido que se salga del círculo */
+    border-radius: 50%; 
+    overflow: hidden; 
     display: flex;
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -38,9 +38,9 @@ button , input {
 
 .logo img {
     justify-content: center;
-    width: 100%; /* Asegura que la imagen se adapte al tamaño del contenedor */
-    height: 100%; /* Asegura que la imagen se adapte al tamaño del contenedor */
-    object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsión */
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
 }
 
 .container-1{
@@ -49,7 +49,7 @@ button , input {
     margin-left: 30%;
     margin-right: 30%;
     color: #d0d4d5;
-    font-weight: bold; /* Negrit */
+    font-weight: bold;
 }
 
 #redirect_crearCuenta{

@@ -22,9 +22,7 @@ function MiPerfil() {
     <div className="mi-perfil">
       <h2 className="mi-perfil-titulo">Mi perfil</h2>
 
-      {/* Contenedor principal con dos columnas */}
       <div className="mi-perfil-contenido">
-        {/* Columna izquierda: info personal */}
         <div className="informacion-personal">
           <img
             src="https://images.imagenmia.com/example_images/1727636988080-30ea216f-249f-4cad-b3f8-44e75ffca4d4.webp"
@@ -57,7 +55,6 @@ function MiPerfil() {
           </div>
         </div>
 
-        {/* Columna derecha: puntaje y botones */}
         <div className="puntaje-y-botones">
           <div className="puntaje">
             <p>Puntaje: 100</p>

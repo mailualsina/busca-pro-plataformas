@@ -15,7 +15,6 @@ function DetallesSolicitud({ solicitud, onClose }) {
 
   useEffect(() => {
     if (solicitud) {
-      // generates random score when changing request
       const puntajeAleatorio = Math.floor(Math.random() * 51) + 55;
       setPuntaje(puntajeAleatorio);
 
