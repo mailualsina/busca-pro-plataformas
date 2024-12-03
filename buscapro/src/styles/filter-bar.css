@@ -1,4 +1,3 @@
-/* Filter Bar Container */
 .filterBar {
     margin: 1rem;
     display: flex;
@@ -11,30 +10,20 @@
     background: #d0d4d5;
   }
   
-  /* Individual Filter Item */
+
   .filterItem {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  /* Container for Slider Buttons */
+
   .sliderButtons {
     display: flex;
     gap: 10px;
   }
   
-  /* General Button Styling */
-  .button {
-    padding: 5px 10px;
-    background: #eee;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 5rem !important;
-  }
-  
-  /* Active Button Styling */
+
   .activeButton {
     padding: 5px 10px;
     background: #007bff;
@@ -47,7 +36,7 @@
 
   .apply-button{
     background-color: #066d9f !important;
-    color: white;
+    color: white !important;
     border-radius: 0.5rem;
     border: none;
     padding: 0.5rem;
