@@ -3,7 +3,7 @@ import "../styles/vistaSolicitudes.css";
 import DetallesSolicitud from "./DetallesSolicitud";
 
 
-function VistaSolicitudes() {
+function ListaSolicitudes() {
   const [solicitudes] = useState([
     { id: 1, titulo: "Solicitud 1 - Ingeniero industrial", monto: "$1.000.000" },
     { id: 2, titulo: "Solicitud 2 - Arquitecto", monto: "$1.400.000" },

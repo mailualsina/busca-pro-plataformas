@@ -13,14 +13,14 @@ const FilterBar = ({ locations, onFilter }) => {
   return (
     <div className="filterBar">
       <div className="filterItem">
-        <label>Location:</label>
+        <label>Ubicacion</label>
         <select
           value={selectedLocation}
           onChange={(e) => {
             setSelectedLocation(e.target.value);
           }}
         >
-          <option value="">All Locations</option>
+          <option value="">Cualquier parte</option>
           {locations.map((location, index) => (
             <option key={index} value={location}>
               {location}
@@ -30,7 +30,7 @@ const FilterBar = ({ locations, onFilter }) => {
       </div>
 
       <div className="filterItem">
-        <label>Experience (years):</label>
+        <label>Experiencia(años):</label>
         <div className="sliderButtons">
           {[5, 10, 20].map((value) => (
             <button
@@ -55,7 +55,7 @@ const FilterBar = ({ locations, onFilter }) => {
               setVerified(e.target.checked);
             }}
           />
-           Verified
+           Verificado
         </label>
       </div>
 
