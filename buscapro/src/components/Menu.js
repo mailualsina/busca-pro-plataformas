@@ -30,6 +30,9 @@ export default function Menu({ onLogout }) {
             <li className="nav-item">
               <Link className="nav-link" to="/listausuarios"><i className="fas fa-users"></i> Profesionales</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/nuevasolicitud">Crear Solicitud</Link>
+            </li>
           </ul>
           
           <button className="btn" onClick={onLogout}><i className="fas fa-sign-out-alt"></i> Logout</button>
