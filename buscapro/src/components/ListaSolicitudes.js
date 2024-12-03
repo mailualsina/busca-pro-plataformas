@@ -3,26 +3,33 @@ import "../styles/vistaSolicitudes.css";
 import DetallesSolicitud from "./DetallesSolicitud";
 
 function VistaSolicitudes() {
-  const [solicitudes, setSolicitudes] = useState([
+  const [solicitudes] = useState([
     { id: 1, titulo: "Solicitud 1 - Ingeniero industrial", monto: "$1.000.000" },
     { id: 2, titulo: "Solicitud 2 - Arquitecto", monto: "$1.400.000" },
     { id: 3, titulo: "Solicitud 3 - Analista de datos", monto: "$2.300.000" },
-    { id: 4, titulo: "Solicitud 4 - Biologo", monto: "$2.000.000" },
-    { id: 5, titulo: "Solicitud 5 - Ingeniero civil", monto: "$1.000.300" },
-    { id: 6, titulo: "Solicitud 6 - Operario industrial", monto: "$700.000" },
+    { id: 4, titulo: "Solicitud 4 - Ingeniero civil", monto: "$1.000.300" },
+    { id: 5, titulo: "Solicitud 5 - Operario industrial", monto: "$700.000" },
+    { id: 6, titulo: "Solicitud 6 - Biologo", monto: "$1.300.000" },
+
   ]);
 
-  const [imagenes, setImagenes] = useState([]);
+  const [solicitudesExtendidas, setSolicitudesExtendidas] = useState([]);
   const [solicitudSeleccionada, setSolicitudSeleccionada] = useState(null);
 
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=6")
       .then((response) => response.json())
       .then((data) => {
-        setImagenes(data.results.map((user) => user.picture.large));
+        const personas = data.results.map((user, index) => ({
+          ...solicitudes[index],
+          nombre: `${user.name.first} ${user.name.last}`,
+          imagen: user.picture.large,
+        }));
+        console.log(personas);
+        setSolicitudesExtendidas(personas);
       })
-      .catch((error) => console.error("Error al obtener las imágenes:", error));
-  }, []);
+      .catch((error) => console.error("Error al obtener datos de la API:", error));
+  }, [solicitudes]);
 
   const handleCloseDetalles = () => {
     setSolicitudSeleccionada(null); 
@@ -30,11 +37,11 @@ function VistaSolicitudes() {
 
   return (
     <div className="vista-solicitudes">
-      
+      {/* Columna Izquierda */}
       <div className="columna izquierda">
         <h2 className="titulo-lista">Lista de Solicitudes</h2>
         <div className="contenedor-solicitudes">
-          {solicitudes.map((solicitud, index) => (
+          {solicitudesExtendidas.map((solicitud) => (
             <div
               key={solicitud.id}
               className="tarjeta-solicitud transRight"
@@ -42,7 +49,7 @@ function VistaSolicitudes() {
             >
               <div className="contenido-solicitud">
                 <img
-                  src={imagenes[index]} 
+                  src={solicitud.imagen}
                   alt="Imagen de persona"
                   className="imagen-solicitud"
                 />
@@ -50,13 +57,14 @@ function VistaSolicitudes() {
               </div>
               <div className="monto-solicitud">
                 <p>{solicitud.monto}</p>
+                <p className="nombre-solicitante">{solicitud.nombre}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      
+      {/* Columna Derecha */}
       <div className="columna derecha">
         {solicitudSeleccionada ? (
           <DetallesSolicitud

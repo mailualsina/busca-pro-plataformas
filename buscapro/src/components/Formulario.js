@@ -17,7 +17,7 @@ function Formulario({ setView }) {
         e.preventDefault();
         try {
             let professionalValue = 0;
-            if(professional != false){
+            if(professional !== false){
                 professionalValue = 1
             }
             const response = await axios.post("http://localhost:5000/api/register", { username, password, fullname, lastname, email, phone, professionalValue});

@@ -1,11 +1,11 @@
 .detalles-solicitud {
     background: #f0f0f0;
-    margin-top: 50px;
+    margin-top: 65px;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 700px; /* card size */
-
+    font-family: 'Arial', sans-serif;
   }
 /* Animación de rotación */
 .rotate-vert-center {
@@ -34,6 +34,14 @@
     cursor: pointer;
     float: right;
   }
+
+  .nombre-solicitante {
+    font-size: 0.9em;
+    color: #0D2237;
+    font-family: 'Arial', sans-serif;
+    
+  }
+  
   
   .acciones {
     display: flex;
@@ -42,6 +50,15 @@
     margin-top: 20px;
   }
   
+  h2{
+    font-size: 30px;
+    color: #3e3f3f;
+    margin-top: 17px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 4rem;
+
+  }
+
   .boton-enviar {
     background: #007bff;
     color: #fff;
