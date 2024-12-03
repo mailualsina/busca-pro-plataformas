@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/login.css";
 import logo from "../assets/logo.jpg";
 
-function Login({ setView }) {
+function Login({ setView , onLogin}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -12,30 +12,30 @@ function Login({ setView }) {
         try {
             const response = await axios.post("http://localhost:5000/api/login", { username, password });
             if (response.data.success) {
-                setView("home");
+                onLogin();
             } else {
-                alert("Invalid credentials");
+                alert("Credenciales Invalidas");
             }
         } catch (error) {
-            alert("Error logging in");
+            alert("Error al ingresar");
         }
     };
 
     return (
 
-        <div class="container">
-            <div class="container-2">
-                <img class="logo" src={logo} alt="Logo"/>
+        <div className="container">
+            <div className="container-2">
+                <img className="logo" src={logo} alt="Logo"/>
             </div>
 
 
-            <div class="container-1">
-                <form onSubmit={handleSubmit} class="form">
-                    <div class="mb-3">
-                        <label for="usuario" class="form-label">Usuario:</label>
+            <div className="container-1">
+                <form onSubmit={handleSubmit} className="form">
+                    <div className="mb-3">
+                        <label for="usuario" className="form-label">Usuario:</label>
                         <input
                             type="text"
-                            class="form-control"
+                            className="form-control"
                             id="usuario"
                             aria-describedby=""
                             placeholder="Usuario"
@@ -44,22 +44,22 @@ function Login({ setView }) {
                         />
 
                     </div>
-                    <div class="mb-3">
-                        <label for="contrasena" class="form-label">Contraseña:</label>
+                    <div className="mb-3">
+                        <label for="contrasena" className="form-label">Contraseña:</label>
                         <input
                             type="password"
-                            class="form-control"
+                            className="form-control"
                             id="password"
                             placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <button type="submit" class="btn btn-primary"> Ingresar </button>
+                    <button type="submit" className="btn btn-primary"> Ingresar </button>
 
-                    <div class="mb-3">
+                    <div className="mb-3">
                         <p id="redirect_crearCuenta">No tiene cuenta? </p>
-                        <button onClick={() => setView("register")}class="btn btn-primary"> Registrarse </button>
+                        <button onClick={() => setView("formulario")}className="btn btn-primary"> Registrarse </button>
                     </div>
 
                 </form>

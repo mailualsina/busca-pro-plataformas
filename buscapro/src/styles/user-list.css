@@ -1,0 +1,50 @@
+.user-container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-height: 50rem;
+}
+
+.user-list{
+    width: 40rem;
+}
+
+.user-card{
+    background-color: #d0d4d5;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.button-see-more{
+    width: 10rem;
+    border: 0rem solid white;
+    border-radius: 0.5rem;
+    background-color: #066d9f !important;
+    color: white !important;
+    font-size: medium !important;
+    font-weight: 500 !important;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.user-filter-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-icon{
+    font-size: xx-large;
+    margin-right: 1rem;
+}

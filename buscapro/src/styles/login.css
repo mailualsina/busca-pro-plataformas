@@ -3,8 +3,6 @@
     --secundary-color: #066d9f;
     --four-color: #0D3F6A;
     --five-color: #0D2237;
-    /*--three-color: #; otro posible color
-     */
 }
 
 body {
@@ -12,7 +10,7 @@ body {
     , var(--five-color));
     height: 100vh;
     margin: 0;
-  }
+}
 
 button , input {
     background-color: var(--one-color) !important ;

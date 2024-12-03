@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/MiPerfil.css";
 
-function MiPerfil({ setView }) {
+function MiPerfil() {
   const [editMode, setEditMode] = useState(false);
   const [breveResumen, setBreveResumen] = useState(
     "Arquitecto con 5 años de experiencia en diseño arquitectónico y urbanismo."
@@ -66,8 +66,9 @@ function MiPerfil({ setView }) {
             <button onClick={editMode ? handleSave : () => setEditMode(true)}>
               {editMode ? "Guardar cambios" : "Editar perfil"}
             </button>
+             {/* 
             <button onClick={() => setView("home")}>Volver al inicio</button>
-            
+            */}
           </div>
         </div>
       </div>

@@ -1,0 +1,17 @@
+#logo {
+    max-height: 80px; /* Ajusta el tamaño del logo */
+    max-width: auto;
+    border-radius: 8px; /* Opcional, redondea los bordes */
+    object-fit: contain; /* Asegura que el logo se ajuste sin distorsión */
+    background-color: transparent !important; /* Asegura que no tenga fondo añadido */
+    overflow: hidden; /* Recorta contenido que se salga del círculo */
+    border-radius: 50%; /* ára que contenedor sea redondeado */
+    width: 100%; /* Asegura que la imagen se adapte al tamaño del contenedor */
+    height: 100%;
+ 
+}
+
+button.btn {
+    font-family: 'Arial', sans-serif;
+    
+}

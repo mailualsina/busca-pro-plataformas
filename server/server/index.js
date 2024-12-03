@@ -11,9 +11,10 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "lu21n39a",
+  password: "Davinci2023.",
   database: "buscapro"
 });
+
 
 db.connect((err) => {
   if (err) throw err;
@@ -23,7 +24,7 @@ db.connect((err) => {
 // Login endpoint
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
-  const query = "SELECT * FROM users WHERE username = ? AND password = ?";
+  const query = "SELECT * FROM user WHERE username = ? AND password = ?";
   db.query(query, [username, password], (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
     if (results.length > 0) {
@@ -36,12 +37,12 @@ app.post("/api/login", (req, res) => {
 
 // Register endpoint
 app.post("/api/register", (req, res) => {
-  const { username, password, email } = req.body;
-  const query = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
-  db.query(query, [username, password, email], (err, result) => {
+  const { username, password, fullname, lastname, email, phone, professionalValue } = req.body;
+  const query = "INSERT INTO user (username, password, name, last_name, email, contact_number, professional) VALUES (?,?,?,?,?,?,?)";
+  db.query(query, [username, password, fullname, lastname, email, phone, professionalValue], (err, result) => {
     if (err) {
       if (err.code === "ER_DUP_ENTRY") {
-        return res.status(400).json({ success: false, message: "Username already taken" });
+        return res.status(400).json({ success: false, message: "El nombre de usuario ya esta en uso" });
       }
       return res.status(500).json({ error: err.message });
     }
