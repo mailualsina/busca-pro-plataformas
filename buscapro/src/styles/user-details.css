@@ -4,6 +4,10 @@
     border: 1px solid #ddd;
     border-radius: 1rem;
     background-color: #d0d4d5;
-    width: 50rem;
+    max-width: 40rem;
     height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
