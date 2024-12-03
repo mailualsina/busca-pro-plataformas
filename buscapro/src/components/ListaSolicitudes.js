@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/vistaSolicitudes.css"; 
 import DetallesSolicitud from "./DetallesSolicitud";
 
+
 function VistaSolicitudes() {
   const [solicitudes] = useState([
     { id: 1, titulo: "Solicitud 1 - Ingeniero industrial", monto: "$1.000.000" },
@@ -15,6 +16,7 @@ function VistaSolicitudes() {
 
   const [solicitudesExtendidas, setSolicitudesExtendidas] = useState([]);
   const [solicitudSeleccionada, setSolicitudSeleccionada] = useState(null);
+
 
   useEffect(() => {
     fetch("https://randomuser.me/api/?results=6")
@@ -37,7 +39,7 @@ function VistaSolicitudes() {
 
   return (
     <div className="vista-solicitudes">
-      {/* Columna Izquierda */}
+    
       <div className="columna izquierda">
         <h2 className="titulo-lista">Lista de Solicitudes</h2>
         <div className="contenedor-solicitudes">
@@ -63,8 +65,6 @@ function VistaSolicitudes() {
           ))}
         </div>
       </div>
-
-      {/* Columna Derecha */}
       <div className="columna derecha">
         {solicitudSeleccionada ? (
           <DetallesSolicitud
@@ -79,4 +79,4 @@ function VistaSolicitudes() {
   );
 }
 
-export default VistaSolicitudes;
+export default ListaSolicitudes;

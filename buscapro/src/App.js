@@ -11,6 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import NuevaSolicitud from "./components/NuevaSolicitud";
 
 function App() {
+
   const [view, setView] = useState("login");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
