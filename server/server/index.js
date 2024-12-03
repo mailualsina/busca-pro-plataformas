@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "Davinci2023.",
+  password: "",
   database: "buscapro"
 });
 
@@ -50,7 +50,7 @@ app.post("/api/register", (req, res) => {
   });
 });
 
-const PORT = 5000;
+const PORT = 5001;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
