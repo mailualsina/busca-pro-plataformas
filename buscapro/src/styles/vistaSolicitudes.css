@@ -2,6 +2,19 @@
     display: flex;
     height: 130vh;
   }
+  .transRight {
+    transition: transform 0.5s, color 0.1s;
+    -webkit-transition: transform 0.5s, color 0.1s;
+    -moz-transition: transform 0.5s, color 0.1s;
+  }
+  
+  .transRight:hover {
+    transform: translateX(20px);
+    -webkit-transform: translateX(20px);
+    -moz-transform: translateX(20px);
+  }
+  
+ 
   
   .columna {
     flex: 1;

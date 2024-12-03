@@ -37,7 +37,7 @@ function VistaSolicitudes() {
           {solicitudes.map((solicitud, index) => (
             <div
               key={solicitud.id}
-              className="tarjeta-solicitud"
+              className="tarjeta-solicitud transRight"
               onClick={() => setSolicitudSeleccionada(solicitud)}
             >
               <div className="contenido-solicitud">

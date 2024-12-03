@@ -18,15 +18,28 @@ function DetallesSolicitud({ solicitud, onClose }) {
       // generates random score when changing request
       const puntajeAleatorio = Math.floor(Math.random() * 51) + 55;
       setPuntaje(puntajeAleatorio);
+
+      const detalleElemento = document.querySelector(".detalles-solicitud");
+
+      if (detalleElemento) {
+        // delete existing animation
+        detalleElemento.classList.remove("rotate-vert-center");
+
+        // Force reflow to restart animation
+        void detalleElemento.offsetWidth;
+
+        // add the animation class again
+        detalleElemento.classList.add("rotate-vert-center");
+      }
     }
   }, [solicitud]); // run every time the request changes
 
   if (!solicitud) return null;
 
   const descripcionProfesion = DescripcionesProfesiones[solicitud.titulo.split(" - ")[1]];
-
+ 
   return (
-    <div className="detalles-solicitud">
+    <div className="detalles-solicitud swing-right-fwd">
       <button className="boton-cerrar" onClick={onClose}>
         X
       </button>
