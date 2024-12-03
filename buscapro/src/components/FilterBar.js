@@ -12,7 +12,6 @@ const FilterBar = ({ locations, onFilter }) => {
 
   return (
     <div className="filterBar">
-      {/* Zona */}
       <div className="filterItem">
         <label>Location:</label>
         <select
@@ -30,7 +29,6 @@ const FilterBar = ({ locations, onFilter }) => {
         </select>
       </div>
 
-      {/* Experiencia */}
       <div className="filterItem">
         <label>Experience (years):</label>
         <div className="sliderButtons">
@@ -48,7 +46,6 @@ const FilterBar = ({ locations, onFilter }) => {
         </div>
       </div>
 
-      {/* Verificado */}
       <div className="filterItem">
         <label>
           <input
